@@ -36,7 +36,10 @@
 </head>
 </html>
 
-
+<!--动态线条背景-->
+<script type="text/javascript"
+color="8,46,84" opacity='0.7' zIndex="-2" count="300" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 <!-- 《页面点击小红心 -->
 
@@ -47,7 +50,8 @@
   <script type="text/javascript" src="/js/snow3.js"></script>
 
 <body>
-
+  
+  
 
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -59,6 +63,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="/assets/1.png" class="js-avatar">
+			
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ypc</a></h1>
@@ -71,6 +76,7 @@
 				<li><a href="/">主页</a></li>
 	        
 			</ul>
+			
 		</nav>
 		<nav>
 			总文章数 4
@@ -101,15 +107,15 @@
 					<a class="mail" target="_blank" href="mailto:2897781091@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-			<!-- 网易云音乐插件 -->
-
-    
 			
-			<div style="position:absolute; bottom:120px left:auto; width:85%">
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=422428548&auto=1&height=66"></iframe>
-				</div>
-			
+			<!--人体时钟背景透明-->
+       <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
 		</nav>
+
+
+
+
+
 		
 	</header>		
 </div>
@@ -319,6 +325,39 @@
 	</div>
 	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278694151'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1278694151%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
   </div>
+  <!--《添加网站运行时间 -->
+<!--<br/>-->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+
+    function createtime() {
+        var grt = new Date("07/25/2019 12:00:00"); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+</script>
+<!-- 添加网站运行时间》 -->
+
 </footer>
 
 <!--页面点击小红心-->
